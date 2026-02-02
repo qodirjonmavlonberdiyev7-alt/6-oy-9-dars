@@ -3,6 +3,7 @@ import sequelize from "../config/config.js";
 export class Bot extends Model {
     full_name;
     phone_number;
+    chat_id;
     message;
 }
 Bot.init({
@@ -17,6 +18,10 @@ Bot.init({
     },
     phone_number: {
         type: DataTypes.STRING,
+        allowNull: true
+    },
+    chat_id: {
+        type: DataTypes.INTEGER,
         allowNull: true
     },
     message: {
