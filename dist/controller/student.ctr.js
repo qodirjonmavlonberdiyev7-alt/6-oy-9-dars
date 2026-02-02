@@ -1,4 +1,5 @@
 import { Student } from "../model/student.model.js";
+Student.sync({ force: false });
 export const getAllStudents = async (req, res, next) => {
     try {
         const student = await Student.findAll();
@@ -12,6 +13,11 @@ export const getAllStudents = async (req, res, next) => {
 };
 export const addStudent = async (req, res, next) => {
     try {
+        const { full_name, phone_number, profession, parent_name, parent_number, image_url } = req.body;
+        await Student.create({ full_name, phone_number, profession, parent_name, parent_number, image_url });
+        res.status(201).json({
+            message: "Added student"
+        });
     }
     catch (error) {
         res.status(500).send({
