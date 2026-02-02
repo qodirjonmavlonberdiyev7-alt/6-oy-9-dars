@@ -1,0 +1,34 @@
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../config/config.js";
+
+
+export class Bot extends Model {
+    full_name!: string;
+    phone_number?: string;
+    message!: string;
+}
+
+Bot.init({
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+     full_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+     phone_number: {
+        type: DataTypes.STRING,
+        allowNull: true 
+    },
+     message: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+},
+{
+    tableName: "bot",
+    timestamps: true,
+    sequelize
+})

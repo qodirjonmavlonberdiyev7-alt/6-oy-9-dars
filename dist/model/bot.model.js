@@ -1,14 +1,11 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../config/config.js";
-export class Student extends Model {
+export class Bot extends Model {
     full_name;
     phone_number;
-    profession;
-    parent_name;
-    parent_number;
-    image_url;
+    message;
 }
-Student.init({
+Bot.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -20,27 +17,15 @@ Student.init({
     },
     phone_number: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
-    profession: {
+    message: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    parent_name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    parent_number: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    image_url: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
 }, {
-    tableName: "students",
+    tableName: "bot",
     timestamps: true,
     sequelize
 });
-//# sourceMappingURL=student.model.js.map
+//# sourceMappingURL=bot.model.js.map

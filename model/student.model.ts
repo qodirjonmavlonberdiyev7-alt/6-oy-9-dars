@@ -22,23 +22,23 @@ Student.init({
         allowNull: false
     },
      phone_number: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
      profession: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
      parent_name: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
      parent_number: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
      image_url: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     }
 },
